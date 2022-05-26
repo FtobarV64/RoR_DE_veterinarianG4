@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2022_05_26_185745) do
+ActiveRecord::Schema[7.0].define(version: 2022_05_26_185942) do
   create_table "clients", force: :cascade do |t|
     t.string "phone"
     t.string "name"
@@ -18,6 +18,17 @@ ActiveRecord::Schema[7.0].define(version: 2022_05_26_185745) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["phone"], name: "index_clients_on_phone", unique: true
+  end
+
+  create_table "pet_histories", force: :cascade do |t|
+    t.float "height"
+    t.float "weight"
+    t.date "dateVisit"
+    t.string "diagnosis"
+    t.integer "pet_id", null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["pet_id"], name: "index_pet_histories_on_pet_id"
   end
 
   create_table "pets", force: :cascade do |t|
@@ -30,5 +41,6 @@ ActiveRecord::Schema[7.0].define(version: 2022_05_26_185745) do
     t.index ["Client_id"], name: "index_pets_on_Client_id"
   end
 
+  add_foreign_key "pet_histories", "pets"
   add_foreign_key "pets", "Clients"
 end
