@@ -28,7 +28,7 @@
 
   <div>
     <%= form.label :Client_id, style: "display: block" %>
-    <%= form.text_field :Client_id %>
+    <%= collection_select( :pet, :Client_id, Client.all, :id, :name )%>
   </div>
 
   <div>
