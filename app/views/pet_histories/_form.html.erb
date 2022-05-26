@@ -33,7 +33,7 @@
 
   <div>
     <%= form.label :pet_id, style: "display: block" %>
-    <%= form.text_field :pet_id %>
+    <%= collection_select(:pet_history, :pet_id, Pet.all, :id, :name) %>
   </div>
 
   <div>
