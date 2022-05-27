@@ -3,7 +3,7 @@ class PetHistoriesController < ApplicationController
 
   # GET /pet_histories or /pet_histories.json
   def index
-    @pet_histories = PetHistory.all
+    @pet_histories = PetHistory.all.order('id ASC')
   end
 
   # GET /pet_histories/1 or /pet_histories/1.json
