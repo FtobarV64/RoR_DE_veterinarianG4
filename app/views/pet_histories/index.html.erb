@@ -11,7 +11,7 @@
       <th scope="col">Datevisit</th>
       <th scope="col">Diagnosis</th>
       <th scope="col">Pet</th>
-      <th colspan="3"></th>
+      <th colspan="2"></th>
     </tr>
   </thead>
   <tbody>
@@ -22,7 +22,8 @@
       <td><%= pet_history.dateVisit %></td>
       <td><%= pet_history.diagnosis %></td>
       <td><%= pet_history.pet.name %></td>
-      <td><%= link_to "Show this pet history", pet_history %></td>
+      <td><%= link_to "Show", pet_history %></td>
+      <td><%= link_to "Edit", edit_pet_history_path(pet_history.id) %></td>
     </tr>
   <% end %>
   </tbody>
